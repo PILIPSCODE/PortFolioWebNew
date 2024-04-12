@@ -4,7 +4,7 @@ import { PiHandWavingBold } from "react-icons/pi";
 import Image from 'next/image'
 import Navigation from './Navigation';
 import { ReactTyped } from "react-typed";
-import { motion, useAnimate } from 'framer-motion';
+import { motion} from 'framer-motion';
 const Home = () => {
     const [time, setTime] = useState(getCurrentTime());
     const [isClient, setIsClient] = useState(false);
@@ -32,6 +32,7 @@ const Home = () => {
 
     function getCurrentTime() {
         const now = new Date();
+
         return {
             hours: String(now.getHours()).padStart(2, '0'),
             minutes: String(now.getMinutes()).padStart(2, '0'),
@@ -56,7 +57,7 @@ const Home = () => {
                     } : { opacity: 0, y: -1000, transition: { duration: 1, delay: 1.5 } }}
                     className='absolute  backdrop-blur-sm md:w-5/6 md:h-5/6 w-full h-full  z-50  bg-black/80 flex flex-col justify-center items-center'>
 
-                    <h1 className='absolute top-20 text-5xl text-yellow-400 max-sm:text-2xl text-center'>"Time is Everything"</h1>
+                    <h1 className='absolute top-20 text-5xl text-yellow-400 max-sm:text-2xl text-center'>`"Time is Everything"`</h1>
                     <div
 
                         className={`text-7xl max-sm:text-5xl py-2 border-2 overflow-hidden text-center rounded-lg`}> <span>{time.hours}</span> <span className='border-x-2 px-1'>{time.minutes}</span> <span>{time.seconds}</span>
