@@ -57,7 +57,7 @@ const Home = () => {
                     } : { opacity: 0, y: -1000, transition: { duration: 1, delay: 1.5 } }}
                     className='absolute  backdrop-blur-sm md:w-5/6 md:h-5/6 w-full h-full  z-50  bg-black/80 flex flex-col justify-center items-center'>
 
-                    <h1 className='absolute top-20 text-5xl text-yellow-400 max-sm:text-2xl text-center'>`"Time is Everything"`</h1>
+                    <h1 className='absolute top-20 text-5xl text-yellow-400 max-sm:text-2xl text-center'>&quot;Time is Everything&quot;</h1>
                     <div
 
                         className={`text-7xl max-sm:text-5xl py-2 border-2 overflow-hidden text-center rounded-lg`}> <span>{time.hours}</span> <span className='border-x-2 px-1'>{time.minutes}</span> <span>{time.seconds}</span>
