@@ -50,7 +50,7 @@ const Education = () => {
                     </div>
                     <div className="timeline-end mb-10">
                         <time className="font-mono italic">2024</time>
-                        <div className="text-lg font-black">    INSTITUT TEKNOLOGI BISNIS AAS (Informatika)</div>
+                        <div className="text-lg font-black">Institut Teknologi Bisnis Aas (Informatika)</div>
 
                     </div>
                     <hr />

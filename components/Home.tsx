@@ -104,7 +104,7 @@ const Home = () => {
                             loop
                         >
                         </ReactTyped></motion.h1>
-                    <Navigation in='Home' />
+                    <Navigation  />
                 </div>
             </motion.div>
         </div>
