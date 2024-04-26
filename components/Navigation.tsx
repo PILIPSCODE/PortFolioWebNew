@@ -19,37 +19,37 @@ const Nav: Navigation[] = [
         Link: "/",
         Text: "Hire Me!",
         Icons: BiTask,
-        BgColor: "blue-600"
+        BgColor: "bg-blue-600"
     },
     {
         Link: "/aboutme",
         Text: "About Me!",
         Icons: LuSmilePlus,
-        BgColor: "yellow-600"
+        BgColor: "bg-yellow-600"
     },
     {
         Link: "/",
         Text: "Project!",
         Icons: AiFillFire,
-        BgColor: "orange-600"
+        BgColor: "bg-orange-600"
     },
     {
         Link: "/",
         Text: "Contact!",
         Icons: AiFillMail,
-        BgColor: "green-600"
+        BgColor: "bg-green-600"
     },
     {
         Link: "/",
         Text: "Service!",
         Icons: FaHeart,
-        BgColor: "red-600"
+        BgColor: "bg-red-600"
     },
     {
         Link: "/",
         Text: "Blog!",
         Icons: FaBlog,
-        BgColor: "slate-600"
+        BgColor: "bg-slate-600"
     },
 ]
 
@@ -81,7 +81,7 @@ function Navigation() {
                 animate="visible"
             >
                 {Nav.map((items, index) => (
-                    <Link key={index} href={items.Link}><motion.div variants={item} className={`btn mx-2 text-white my-2 glass bg-${items.BgColor} `}> <span>{items.Text}  </span><span className='text-2xl'><items.Icons /></span> </motion.div></Link>
+                    <Link key={index} href={items.Link}><motion.div variants={item} className={`btn mx-2 text-white my-2 glass ${items.BgColor} `}> <span>{items.Text}  </span><span className='text-2xl'><items.Icons /></span> </motion.div></Link>
                 ))}
 
             </motion.div>
@@ -112,9 +112,9 @@ function NavigationScroll() {
                 }
             } : { opacity: 0, y: -100, }}
             className={`w-full left-0 z-50 top-0 flex gap-3 justify-center items-center fixed  `}>
-            <div className='bg-black/80 p-5 md:w-9/12 w-full justify-center gap-5 backdrop-blur-sm flex shadow-sm shadow-white rounded-md'>
+            <div className='bg-black/80 p-5 md:w-9/12 w-full justify-around gap-5 backdrop-blur-sm flex shadow-sm shadow-white rounded-md'>
                 {Nav.map((items, index) => (
-                    <div key={index} data-tip={items.Text} className={`flex max-md:tooltip tooltip-bottom hover:text-blue-400 items-center text-2xl gap-2`}>
+                    <div key={index} data-tip={items.Text} className={`flex max-md:tooltip max-md:tooltip-bottom hover:text-white/50  text-white/white items-center text-xl gap-2`}>
                         <items.Icons />
                         <h1 className='max-md:hidden'>{items.Text}</h1>
                     </div>

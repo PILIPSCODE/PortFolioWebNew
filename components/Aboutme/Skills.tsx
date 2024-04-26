@@ -2,71 +2,106 @@
 import React, { useEffect, useState } from 'react'
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaGolang, FaPython, FaNodeJs, FaReact, FaBootstrap } from "react-icons/fa6";
-import { SiDart, SiNextdotjs, SiExpress, SiTailwindcss, SiMongodb } from "react-icons/si";
+import { SiDart, SiNextdotjs, SiExpress, SiTailwindcss, SiMongodb, SiGithub, SiPostman, SiGit, SiVisualstudiocode } from "react-icons/si";
 import { IconType } from 'react-icons'
 
 
 type Skils = {
-    icon: IconType,
+    Icon: IconType,
     lang: string,
-    color: string,
+    active:boolean
 }
 
 const Skill: Skils[] = [
     {
-        icon: IoLogoJavascript,
+        Icon: IoLogoJavascript,
         lang: "Javascript",
-        color: "text-yellow-300"
+        active:false,
     },
     {
-        icon: FaReact,
+        Icon: FaReact,
         lang: "React Js",
-        color: "text-blue-400"
+        active:false,
+
     },
     {
-        icon: SiNextdotjs,
+        Icon: SiNextdotjs,
         lang: "Next Js",
-        color: "text-slate-700"
+        active:false,
+
+        
     },
     {
-        icon: SiExpress,
+        Icon: SiExpress,
         lang: "Express Js",
-        color: "text-zinc-500"
+        active:false,
+
+       
     },
     {
-        icon: FaNodeJs,
+        Icon: FaNodeJs,
         lang: "Node Js",
-        color: "text-green-700"
+        active:false,
+
+       
     },
     {
-        icon: SiTailwindcss,
+        Icon: SiTailwindcss,
         lang: "Tailwind Css",
-        color: "text-blue-400"
+        active:false,
+       
     },
     {
-        icon: FaBootstrap,
+        Icon: FaBootstrap,
         lang: "Tailwind Css",
-        color: "text-purple-600"
+        active:false,
     },
     {
-        icon: SiMongodb,
+        Icon: SiMongodb,
         lang: "Mongodb",
-        color: "text-green-700"
+        active:false,
+
     },
     {
-        icon: FaGolang,
+        Icon: FaGolang,
         lang: "Golang",
-        color: "text-blue-400"
+        active:false,
     },
     {
-        icon: FaPython,
+        Icon: FaPython,
         lang: "Python",
-        color: "text-yellow-300"
+        active:false,
+
     },
     {
-        icon: SiDart,
+        Icon: SiDart,
         lang: "Dart",
-        color: "text-blue-200"
+        active:false,
+
+    },
+    {
+        Icon: SiGithub,
+        lang: "GitHub",
+        active:false,
+
+    },
+    {
+        Icon: SiGit,
+        lang: "Git",
+        active:false,
+
+    },
+    {
+        Icon: SiPostman,
+        lang: "PostMan",
+        active:false,
+
+    },
+    {
+        Icon: SiVisualstudiocode,
+        lang: "Vs Code",
+        active:false,
+
     },
 ]
 
@@ -77,7 +112,7 @@ const Skills = () => {
     useEffect(() => {
         let currentIndex = 0; // Menyimpan index saat ini
         const interval = setInterval(() => {
-            setSkills(prevSkills => prevSkills.map((skill, index) => ({ ...skill, color: index === currentIndex ? Skill[index].color : "" })));
+            setSkills(prevSkills => prevSkills.map((skill, index) => ({ ...skill, active: index === currentIndex ? true : false })));
             currentIndex = (currentIndex + 1) % Skill.length;
         }, 1000);
 
@@ -89,13 +124,22 @@ const Skills = () => {
             <div className='justify-center flex'>
                 <h1 className='mx-auto text-3xl  max-md:text-xl bg-white text-black my-14'>Skills</h1>
             </div>
-            <div className='flex gap-9 justify-center flex-wrap'>
+            <div className='flex gap-10 justify-center flex-wrap'>
 
                 {skills.map((items, index) => (
-                    <div className={`text-9xl max-md:text-6xl tooltip-top hover:${Skill[1].color} tooltip ${items.color}`} data-tip={items.lang} key={index}><items.icon /></div>
+                    <IconsSkill active={items.active} key={index}  Icon={items.Icon} lang={items.lang} />
                 ))}
             </div>
         </div>
+    )
+}
+
+const IconsSkill = ({ Icon, lang ,active}: Skils) => {
+    return (
+
+        <div className={` tooltip-top text-6xl max-md:text-4xl duration-200 text/ tooltip  ${active?"text-white scale-125 tooltip-open":"text-white/65"} hover:scale-125 hover:text-white`} data-tip={lang}><Icon /></div>
+
+
     )
 }
 
