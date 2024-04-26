@@ -23,11 +23,11 @@ const Aboutme = () => {
     }, []);
 
     return (
-        <div className=' w-screen pt-20  font-popOne relative '>
+        <div id='Aboutme' className=' w-screen pt-20  font-popOne relative '>
 
 
             <h1 className=' text-5xl max-md:text-3xl md:p-10 p-2 '>About Me!</h1>
-            <div className='lg:w-8/12  bg-black/80  mx-auto flex items-center flex-col justify-center  max-lg:w-11/12 p-2 sm:pt-20 text-justify'>
+            <div className='lg:w-8/12   mx-auto flex items-center flex-col justify-center  max-lg:w-11/12 p-4 sm:pt-20 text-justify'>
                 <div>
                     <div className='relative w-28 sm:h-36 sm:w-36 h-28' style={{ float: 'left', marginRight: '20px' }}>
                         <Image fill alt='person' src={"/pilips.png"} className=" p-2 bg-white rounded-full" />

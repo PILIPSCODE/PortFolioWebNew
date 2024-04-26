@@ -22,13 +22,13 @@ const Nav: Navigation[] = [
         BgColor: "bg-blue-600"
     },
     {
-        Link: "/aboutme",
+        Link: "#Aboutme",
         Text: "About Me!",
         Icons: LuSmilePlus,
         BgColor: "bg-yellow-600"
     },
     {
-        Link: "/",
+        Link: "#Project",
         Text: "Project!",
         Icons: AiFillFire,
         BgColor: "bg-orange-600"
@@ -112,12 +112,12 @@ function NavigationScroll() {
                 }
             } : { opacity: 0, y: -100, }}
             className={`w-full left-0 z-50 top-0 flex gap-3 justify-center items-center fixed  `}>
-            <div className='bg-black/80 p-5 md:w-9/12 w-full justify-around gap-5 backdrop-blur-sm flex shadow-sm shadow-white rounded-md'>
+            <div className='bg-black/80 p-5 md:w-8/12 w-full justify-around gap-5 backdrop-blur-sm flex shadow-sm shadow-white rounded-md'>
                 {Nav.map((items, index) => (
-                    <div key={index} data-tip={items.Text} className={`flex max-md:tooltip max-md:tooltip-bottom hover:text-white/50  text-white/white items-center text-xl gap-2`}>
+                    <Link href={items.Link} key={index} data-tip={items.Text} className={`flex max-md:tooltip max-md:tooltip-bottom hover:text-white/50  text-white/white items-center text-xl gap-2`}>
                         <items.Icons />
                         <h1 className='max-md:hidden'>{items.Text}</h1>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </motion.div>

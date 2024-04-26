@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaGolang, FaPython, FaNodeJs, FaReact, FaBootstrap } from "react-icons/fa6";
-import { SiDart, SiNextdotjs, SiExpress, SiTailwindcss, SiMongodb, SiGithub, SiPostman, SiGit, SiVisualstudiocode } from "react-icons/si";
+import { SiDart, SiNextdotjs, SiExpress, SiTailwindcss, SiMongodb, SiGithub, SiPostman, SiGit, SiVisualstudiocode, SiRedux } from "react-icons/si";
 import { IconType } from 'react-icons'
 
 
@@ -21,6 +21,12 @@ const Skill: Skils[] = [
     {
         Icon: FaReact,
         lang: "React Js",
+        active:false,
+
+    },
+    {
+        Icon: SiRedux,
+        lang: "Redux",
         active:false,
 
     },
@@ -47,13 +53,13 @@ const Skill: Skils[] = [
     },
     {
         Icon: SiTailwindcss,
-        lang: "Tailwind Css",
+        lang: "Tailwind",
         active:false,
        
     },
     {
         Icon: FaBootstrap,
-        lang: "Tailwind Css",
+        lang: "Bootstrap",
         active:false,
     },
     {
@@ -114,7 +120,7 @@ const Skills = () => {
         const interval = setInterval(() => {
             setSkills(prevSkills => prevSkills.map((skill, index) => ({ ...skill, active: index === currentIndex ? true : false })));
             currentIndex = (currentIndex + 1) % Skill.length;
-        }, 1000);
+        }, 500);
 
         return () => clearInterval(interval);
 
