@@ -34,6 +34,12 @@ const Nav: Navigation[] = [
         BgColor: "bg-orange-600"
     },
     {
+        Link: "#Service",
+        Text: "Service!",
+        Icons: FaHeart,
+        BgColor: "bg-red-600"
+    },
+    {
         Link: "/",
         Text: "Contact!",
         Icons: AiFillMail,
@@ -41,15 +47,9 @@ const Nav: Navigation[] = [
     },
     {
         Link: "/",
-        Text: "Service!",
-        Icons: FaHeart,
-        BgColor: "bg-red-600"
-    },
-    {
-        Link: "/",
         Text: "Blog!",
         Icons: FaBlog,
-        BgColor: "bg-slate-600"
+        BgColor: "bg-purple-600"
     },
 ]
 
@@ -73,7 +73,7 @@ const container = {
 };
 function Navigation() {
     return (
-        <div className=' md:w-10/12 m-auto w-full'>
+        <div className=' md:w-10/12 m-auto  w-full'>
             <NavigationScroll />
             <motion.div
                 variants={container}
@@ -81,7 +81,7 @@ function Navigation() {
                 animate="visible"
             >
                 {Nav.map((items, index) => (
-                    <Link key={index} href={items.Link}><motion.div variants={item} className={`btn mx-2 text-white my-2 glass ${items.BgColor} `}> <span>{items.Text}  </span><span className='text-2xl'><items.Icons /></span> </motion.div></Link>
+                    <Link key={index} href={items.Link}><motion.div variants={item} className={`btn mx-2 text-white  my-2 glass ${items.BgColor} `}> <span>{items.Text}  </span><span className='text-2xl'><items.Icons /></span> </motion.div></Link>
                 ))}
 
             </motion.div>
@@ -112,11 +112,11 @@ function NavigationScroll() {
                 }
             } : { opacity: 0, y: -100, }}
             className={`w-full left-0 z-50 top-0 flex gap-3 justify-center items-center fixed  `}>
-            <div className='bg-black/80 p-5 md:w-8/12 w-full justify-around gap-5 backdrop-blur-sm flex shadow-sm shadow-white rounded-md'>
+            <div className='bg-black/80 p-5 lg:w-8/12 w-full justify-around gap-5 backdrop-blur-sm flex shadow-sm shadow-white rounded-md'>
                 {Nav.map((items, index) => (
                     <Link href={items.Link} key={index} data-tip={items.Text} className={`flex max-md:tooltip max-md:tooltip-bottom hover:text-white/50  text-white/white items-center text-xl gap-2`}>
                         <items.Icons />
-                        <h1 className='max-md:hidden'>{items.Text}</h1>
+                        <h1 className='max-xl:hidden'>{items.Text}</h1>
                     </Link>
                 ))}
             </div>
