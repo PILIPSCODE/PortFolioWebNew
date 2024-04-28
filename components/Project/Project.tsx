@@ -6,9 +6,9 @@ const Project = () => {
     return (
         <div id='Project' className=' w-screen pt-10  font-popOne relative '>
             <h1 className=' text-5xl max-md:text-3xl md:p-10 p-2 '>Project!</h1>
-            <div className='lg:w-8/12   mx-auto flex items-center flex-wrap justify-center gap-4   max-lg:w-11/12 p-4 sm:pt-20 text-justify'>
+            <div className='lg:w-8/12   mx-auto grid xl:grid-cols-3 gap-4 sm:grid-cols-2  max-lg:w-11/12 p-4 sm:pt-20 text-justify'>
 
-                <div className="card w-72 bg-base-100 shadow-xl ">
+                <div className="card bg-base-100 shadow-xl ">
                     <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                     <div className="card-body text-sm">
                         <h2 className="card-title justify-between text-base">
@@ -28,7 +28,7 @@ const Project = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card w-72 bg-base-100 shadow-xl ">
+                <div className="card bg-base-100 shadow-xl ">
                     <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                     <div className="card-body text-sm">
                         <h2 className="card-title justify-between text-base">
@@ -48,7 +48,7 @@ const Project = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card w-72 bg-base-100 shadow-xl ">
+                <div className="card bg-base-100 shadow-xl ">
                     <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                     <div className="card-body text-sm">
                         <h2 className="card-title justify-between text-base">
@@ -68,7 +68,7 @@ const Project = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card w-72 bg-base-100 shadow-xl ">
+                <div className="card  bg-base-100 shadow-xl ">
                     <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                     <div className="card-body text-sm">
                         <h2 className="card-title justify-between text-base">
@@ -88,7 +88,7 @@ const Project = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card w-72 bg-base-100 shadow-xl ">
+                <div className="card bg-base-100 shadow-xl ">
                     <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                     <div className="card-body text-sm">
                         <h2 className="card-title justify-between text-base">

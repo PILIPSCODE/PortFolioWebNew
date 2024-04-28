@@ -41,15 +41,15 @@ const Nav: Navigation[] = [
     },
     {
         Link: "/",
-        Text: "Contact!",
-        Icons: AiFillMail,
-        BgColor: "bg-green-600"
-    },
-    {
-        Link: "/",
         Text: "Blog!",
         Icons: FaBlog,
         BgColor: "bg-purple-600"
+    },
+    {
+        Link: "/",
+        Text: "Contact!",
+        Icons: AiFillMail,
+        BgColor: "bg-green-600"
     },
 ]
 
