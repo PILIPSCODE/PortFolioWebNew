@@ -34,7 +34,7 @@ body {
   }
 }
 
-.swiper-button-next::after, .swiper-button-next::after {
+.Service .swiper-button-next::after, .Service .swiper-button-next::after {
   font-size: 25px;
   background: black;
   color: white;
@@ -42,7 +42,7 @@ body {
   border-radius: 50px;
   padding: 3px 8px;
 }
-.swiper-button-prev::after, .swiper-button-prev::after {
+.Service .swiper-button-prev::after, .Service .swiper-button-prev::after {
   font-size: 25px;
   background: black;
   color: white;

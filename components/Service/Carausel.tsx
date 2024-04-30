@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 
 // import required modules
@@ -23,17 +24,17 @@ export default function Carausel() {
                         slidesPerView: 2,
                         spaceBetween: 18,
                     },
-            
+
                     1241: {
                         slidesPerView: 3,
                         spaceBetween: 18,
                     },
                 }}
-                modules={[Pagination,Navigation]}
-                className="mySwiper bg-white   rounded-md lg:w-8/12 max-lg:w-11/12 "
+                modules={[Pagination, Navigation]}
+                className="mySwiper bg-white Service   rounded-md lg:w-8/12 max-lg:w-11/12 "
             >
                 <SwiperSlide>
-                    <div className="card rounded-none  bg-base-100 shadow-xl ">
+                    <div className="card  bg-base-100 shadow-xl ">
                         <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                         <div className="card-body text-sm">
                             <h2 className="card-title justify-between text-base">
@@ -51,7 +52,7 @@ export default function Carausel() {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="card rounded-none  bg-base-100 shadow-xl ">
+                    <div className="card  bg-base-100 shadow-xl ">
                         <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                         <div className="card-body text-sm">
                             <h2 className="card-title justify-between text-base">
@@ -69,7 +70,7 @@ export default function Carausel() {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="card rounded-none  bg-base-100 shadow-xl ">
+                    <div className="card  bg-base-100 shadow-xl ">
                         <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                         <div className="card-body text-sm">
                             <h2 className="card-title justify-between text-base">
@@ -87,7 +88,7 @@ export default function Carausel() {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="card rounded-none  bg-base-100 shadow-xl ">
+                    <div className="card  bg-base-100 shadow-xl ">
                         <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                         <div className="card-body text-sm">
                             <h2 className="card-title justify-between text-base">
@@ -104,7 +105,8 @@ export default function Carausel() {
                         </div>
                     </div>
                 </SwiperSlide>
-                
+               
+
             </Swiper>
         </>
     );
