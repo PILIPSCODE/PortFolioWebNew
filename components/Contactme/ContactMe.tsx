@@ -9,7 +9,7 @@ const Contactus = () => {
                 <div
                 className='md:pl-10 text-justify pl-2 text-lg '
                 >
-                    <h1>I'd love to communicate with you! If you're interested in collaborating, have any questions, or just want to say hello, feel free to contact me.</h1>
+                    <h1>I&apos;love to communicate with you! If you&apos;re interested in collaborating, have any questions, or just want to say hello, feel free to contact me.</h1>
                     <div className='flex max-sm:justify-center  text-3xl my-5  gap-2'>
                             <FaInstagram />
                             <FaTiktok />

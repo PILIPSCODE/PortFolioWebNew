@@ -14,7 +14,7 @@ const Footer = () => {
                         </div>
                         
                     </div>
-                    <h1 className='text-xl mt-2 md:text-center  md:w-1/4'>"Time is Everything, so dont spend your time to being lazy"</h1>
+                    <h1 className='text-xl mt-2 md:text-center  md:w-1/4'>&quot;Time is Everything, so dont spend your time to being lazy&quot;"</h1>
                 </div>
                 <div className=' w-full flex justify-center mt-8 mb-3 text-white'>
                     <h1 className='flex text-lg items-center gap-1'>Copy Right <FaCopyright /> 2024 By Pilips</h1>
