@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Sleep from "@/components/Sleep";
+import ToasterContext from "./context/ToasterContext";
+import AuthContext from "./context/AuthContext";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,10 +20,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en"  className="overflow-x-hidden scroll-smooth">
+      <AuthContext>
+        
       <body className={inter.className}>
+
         {children}
         <Sleep />
+        <ToasterContext/>
       </body>
+      </AuthContext>
+
+      
     </html>
   );
 }

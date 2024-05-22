@@ -91,7 +91,7 @@ const Home = () => {
                                 "Golang",
                                 "Python",
                                 "Fullstack Developer",
-                                "Popular with",
+                                "Familiar with",
                                 "Next Js(React js)",
                                 "Express js(Node js)",
                                 "MongoDb",
