@@ -5,7 +5,6 @@ import { CldUploadButton } from "next-cloudinary";
 import Image from "next/image";
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
-import Loading from "@/app/Admin/component/loading";
 import { useRouter } from "next/navigation";
 
 type Services = {
@@ -55,7 +54,6 @@ const HandleSubmit = async(e:React.FormEvent<HTMLFormElement>) => {
 
   return (
     <div className=" h-screen flex-col overflow-y-scroll flex justify-center items-center w-full">
-      <Loading load={loading} text=""/>
       <h1 className='text-4xl text-black border-4 rounded-xl max-md:mt-24  border-black p-2  '>Add-Service</h1>
       <form onSubmit={(e) => HandleSubmit(e)} className="grid sm:grid-cols-2 relative shadow-xl gap-4 p-4 w-11/12">
         <div className="w-full max-sm:h-56 flex items-center justify-center p-4">

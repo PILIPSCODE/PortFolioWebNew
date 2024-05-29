@@ -68,7 +68,7 @@ const [like,setlike] = useState(false)
   return (
     <div className="sm:w-40 md:p-10 p-3 sm:h-screen h-auto w-screen  flex-grow overflow-y-scroll">
       <div className="fixed bottom-10 right-10 z-50 rounded-full bg-white/60 text-black"> 
-        <Link href={'/Admin/Blog/AddBlog'}><FaPlusCircle  size={55}/></Link>
+        <Link href={'/admin/Blog/AddBlog'}><FaPlusCircle  size={55}/></Link>
       </div>
        <h1 className='text-4xl text-black font-bold my-3'>All Blogs</h1>
        <div className="flex justify-center items-center">
@@ -119,7 +119,7 @@ const [like,setlike] = useState(false)
         <div className=" flex w-full justify-center">
 
          <PaginationControls
-      Route='/Admin/Blog'
+      Route='/admin/Blog'
         length={Blog.length}
         hasNextPage={end < Blog.length}
         hasPrevPage={start > 0}

@@ -5,7 +5,6 @@ import { useRef } from "react";
 import toast from "react-hot-toast";
 import { BsPencil } from "react-icons/bs";
 import "suneditor/dist/css/suneditor.min.css";
-import Loading from "@/app/Admin/component/loading";
 import { useRouter } from "next/navigation";
 import SunEditorCore from "suneditor/src/lib/core";
 import SunEditor, { buttonList } from "suneditor-react";
@@ -65,7 +64,6 @@ const EditBlog = (props:{service:Services}) => {
         <BsPencil size={20} />
       </h1>
       <dialog ref={modalref} className="modal">
-      <Loading load={loading} text=""/>
         <form onSubmit={(e) => HandleSubmit(e)} method="dialog" className="modal-box  h-screen w-11/12 max-w-5xl">
         <div className="flex justify-center">
             <h1 className='text-4xl text-white border-4 rounded-xl border-white my-5 p-2 '>Edit-Blog</h1>

@@ -28,7 +28,7 @@ const Drawer = () => {
         className=" p-2  tooltip max-sm:mx-0 mx-2 tooltip-right "
         data-tip="Dashboard"
       >
-        <Link className="gap-2 flex items-center" href={`/Admin`}>
+        <Link className="gap-2 flex items-center" href={`/admin`}>
           <RxDashboard size={25} />
         <h1 className="text-xl ">Dasboard</h1>
         </Link>
@@ -37,7 +37,7 @@ const Drawer = () => {
         className=" p-2  tooltip max-sm:mx-0 mx-2 tooltip-right  "
         data-tip="Portfolio"
       >
-        <Link className="gap-2 flex items-center" href={`/Admin/Portfolio`}>
+        <Link className="gap-2 flex items-center" href={`/admin/Portfolio`}>
           <BsImage size={25} />
         <h1 className="text-xl ">Portfolio</h1>
         </Link>
@@ -47,25 +47,16 @@ const Drawer = () => {
         className=" p-2  tooltip max-sm:mx-0 mx-2 tooltip-right  "
         data-tip="Service"
       >
-        <Link className="gap-2 flex items-center" href={`/Admin/Service`}>
+        <Link className="gap-2 flex items-center" href={`/admin/Service`}>
           <FcSelfServiceKiosk size={25} />
         <h1 className="text-xl ">Service</h1>
-        </Link>
-      </div>
-      <div
-        className=" p-2  tooltip max-sm:mx-0 mx-2 tooltip-right max-md:tooltip-bottom "
-        data-tip="Price-list"
-      >
-        <Link className="gap-2 flex items-center" href={`/Admin/PriceList`}>
-          <FaDollarSign size={25} />
-        <h1 className="text-xl">PriceList</h1>
         </Link>
       </div>
       <div
         className=" p-2  tooltip max-sm:mx-0 mx-2 tooltip-right  "
         data-tip="Blog"
       >
-        <Link className="gap-2 flex items-center" href={`/Admin/Blog`}>
+        <Link className="gap-2 flex items-center" href={`/admin/Blog`}>
           <SiBloglovin size={25} />
         <h1 className="text-xl ">Blog</h1>
         </Link>

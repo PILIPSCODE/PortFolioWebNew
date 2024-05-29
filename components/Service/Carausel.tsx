@@ -35,77 +35,53 @@ export default function Carausel() {
             >
                 <SwiperSlide>
                     <div className="card  bg-base-100 shadow-xl ">
-                        <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                         <div className="card-body text-sm">
                             <h2 className="card-title justify-between text-base">
                                 <div className='gap-2 flex items-center'>
-                                    Landing Page
+                                    Comming Soon
                                 </div>
 
                             </h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-center pt-1">
-                                <div className="badge badge-outline">Next js</div>
-                                <div className="badge badge-outline">Tailwind css</div>
-                            </div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="card  bg-base-100 shadow-xl ">
-                        <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                         <div className="card-body text-sm">
                             <h2 className="card-title justify-between text-base">
                                 <div className='gap-2 flex items-center'>
-                                    Landing Page
+                                    Comming Soon
                                 </div>
 
                             </h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-center pt-1">
-                                <div className="badge badge-outline">Next js</div>
-                                <div className="badge badge-outline">Tailwind css</div>
-                            </div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="card  bg-base-100 shadow-xl ">
-                        <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                         <div className="card-body text-sm">
                             <h2 className="card-title justify-between text-base">
                                 <div className='gap-2 flex items-center'>
-                                    Landing Page
+                                    Comming Soon
                                 </div>
 
                             </h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-center pt-1">
-                                <div className="badge badge-outline">Next js</div>
-                                <div className="badge badge-outline">Tailwind css</div>
-                            </div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="card  bg-base-100 shadow-xl ">
-                        <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                         <div className="card-body text-sm">
                             <h2 className="card-title justify-between text-base">
                                 <div className='gap-2 flex items-center'>
-                                    Landing Page
+                                    Comming Soon
                                 </div>
 
                             </h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-center pt-1">
-                                <div className="badge badge-outline">Next js</div>
-                                <div className="badge badge-outline">Tailwind css</div>
-                            </div>
                         </div>
                     </div>
                 </SwiperSlide>
-               
+                
 
             </Swiper>
         </>

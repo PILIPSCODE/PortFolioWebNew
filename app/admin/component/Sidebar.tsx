@@ -61,15 +61,6 @@ const SideBar = () => {
       </div>
       <div
         className=" p-2  tooltip max-sm:mx-0 mx-2 tooltip-right max-md:tooltip-bottom "
-        data-tip="Price-list"
-      >
-        <Link className="gap-2 flex items-center" href={`/admin/PriceList`}>
-          <FaDollarSign size={25} />
-        <h1 className="text-xl max-md:hidden">PriceList</h1>
-        </Link>
-      </div>
-      <div
-        className=" p-2  tooltip max-sm:mx-0 mx-2 tooltip-right max-md:tooltip-bottom "
         data-tip="Blog"
       >
         <Link className="gap-2 flex items-center" href={`/admin/Blog`}>

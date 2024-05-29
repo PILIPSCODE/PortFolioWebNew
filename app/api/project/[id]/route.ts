@@ -8,25 +8,27 @@ export const PUT = async (
 ) => {
   try {
     const body = await req.json();
-    const { name, description, img, technology } = body;
+    const { name, description, img, technology, link, github} = body;
     const UpdateProject = await prisma.project.update({
       where: {
         id: params.id,
       },
       data: {
         name,
+        link,
+        github,
         description,
         img,
       },
     });
 
-    const DeleteTechnologybyid = await prisma.technolgy.deleteMany({
+     await prisma.technolgy.deleteMany({
       where: {
         projectId: UpdateProject.id,
       },
     });
 
-    const UpdateTechnology = await prisma.technolgy.createMany({
+    await prisma.technolgy.createMany({
       data: technology.map((e: technology) => {
         return {
           link: e.link,

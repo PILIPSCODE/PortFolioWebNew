@@ -80,7 +80,7 @@ const router = useRouter()
   }
         </div>
   <div className="fixed bottom-10 right-10 bg-white/60 z-50 rounded-full text-black"> 
-        <Link href={'/Admin/Service/AddService'}><FaPlusCircle  size={55}/></Link>
+        <Link href={'/admin/Service/AddService'}><FaPlusCircle  size={55}/></Link>
       </div>
       </div>
     )

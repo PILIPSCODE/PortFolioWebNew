@@ -19,7 +19,7 @@ export const GET = async (req:Request,res:NextResponse) => {
 export const POST = async (req: Request, res: NextResponse) => {
   try {
     const body = await req.json();
-    const { name, description, img,technology} = body;
+    const { name, description, img,technology, github, link} = body;
     
 
     if(description !== "" && name !=="" && img !== ""){
@@ -29,6 +29,8 @@ export const POST = async (req: Request, res: NextResponse) => {
           data:{
               name:name,
               img:img,
+              github:github,
+              link:link,
               description:description,
           },
           include:{
@@ -39,8 +41,7 @@ export const POST = async (req: Request, res: NextResponse) => {
       await prisma.technolgy.createMany({
         data:technology.map((e:technology) => {
             return {
-              link:e.link,
-              technology:e.technology,
+              technology:e,
               projectId:createproject.id
             }
         })

@@ -61,6 +61,7 @@ const Sleep = () => {
             className='fixed  backdrop-blur-sm w-screen left-0 h-screen font-popOne top-0  z-50  bg-black/80 flex flex-col justify-center items-center'>
 
             <h1 className='absolute top-20 text-5xl text-yellow-400 max-sm:text-2xl text-center'>&quot;Time is Everything&quot;</h1>
+            <h1 className='absolute top-36 break-words text-4xl text-white max-sm:text-xl text-center'>why are you still here, go out and take action</h1>
             <div
 
                 className={`text-7xl max-sm:text-5xl py-2 border-2 overflow-hidden text-center rounded-lg`}> <span>{time.hours}</span> <span className='border-x-2 px-1'>{time.minutes}</span> <span>{time.seconds}</span>
