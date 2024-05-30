@@ -28,7 +28,7 @@ const Project = async () => {
                                         <div className={`${index === 0? "" : "hidden"} badge badge-secondary`}>NEW</div>
                                     </h2>
                                     <p>{e.description}</p>
-                                    <div className="card-actions pt-2  justify-center">
+                                    <div className="card-actions pt-2 border border-black justify-center">
                                         {e.technology.map((e, index) => (
                                             <div key={index} className="badge text-black bg-white">{e.technology}</div>
                                         ))}
