@@ -31,7 +31,7 @@ export default function Carausel() {
                     },
                 }}
                 modules={[Pagination, Navigation]}
-                className="mySwiper bg-white Service   rounded-md lg:w-8/12 max-lg:w-11/12 "
+                className="mySwiper bg-white Service text-white  rounded-md lg:w-8/12 max-lg:w-11/12 "
             >
                 <SwiperSlide>
                     <div className="card  bg-base-100 shadow-xl ">

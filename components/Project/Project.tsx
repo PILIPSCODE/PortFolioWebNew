@@ -12,23 +12,23 @@ const Project = async () => {
                 <div className='grid md:grid-cols-2 gap-10 mt-10  w-full lg:pr-4'>
                     {DataProject?.map((e, index) => (
                         e.img !== null ?
-                            <div key={index} className="card  bg-base-100 shadow-lg rounded-lg shadow-white focus-within:outline-orange-500 focus-within:shadow-orange-500 outline">
-                                <figure className='h-2/3 relative '>
-                                    <Image src={e.img} alt='card-img' width={752} height={256} className='object-contain' />
+                            <div key={e.id} className="card  bg-base-100 shadow-lg rounded-lg shadow-white focus-within:outline-orange-500 focus-within:shadow-orange-500 outline">
+                                <figure className=' relative h-64'>
+                                    <Image src={e.img} alt='card-img' fill className='object-cover' />
                                     <div className='h-full w-full text-2xl focus-within:opacity-100  absolute flex justify-center items-center bg-black/50 opacity-0 duration-300 hover:opacity-100'>
                                         <div className=' flex gap-4 p-2 bg-white rounded-3xl text-black'>
-                                            <Link href={e.link}><FaEye /></Link>
-                                            <Link href={e.github}><FaGithub /></Link>
+                                            <Link className={`${e.link !== ""? "" : "text-red-600 pointer-events-none"}`} href={e.link}><FaEye /></Link>
+                                            <Link className={`${e.github !== ""? "" : "text-red-600 pointer-events-none"}`}  href={e.github}><FaGithub /></Link>
                                         </div>
                                     </div>
                                 </figure>
                                 <div className="card-body rounded-b-md text-black bg-white">
                                     <h2 className="card-title">
-                                        Shoes!
-                                        <div className="badge badge-secondary">NEW</div>
+                                        {e.name}
+                                        <div className={`${index === 0? "" : "hidden"} badge badge-secondary`}>NEW</div>
                                     </h2>
                                     <p>{e.description}</p>
-                                    <div className="card-actions pt-1  justify-end">
+                                    <div className="card-actions pt-2  justify-center">
                                         {e.technology.map((e, index) => (
                                             <div key={index} className="badge text-black bg-white">{e.technology}</div>
                                         ))}
