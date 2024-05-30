@@ -4,21 +4,20 @@ import Footer from '@/components/Contactme/Footer'
 import Home from '@/components/Home'
 import Projects from '@/components/Project/Project'
 import Service from '@/components/Service/Service'
-import React from 'react'
-import GetProject from './action/GetProject'
+import { Suspense } from "react";
 
-async function page() {
-  const getProject = await GetProject()
+export default function Page () {
+
   return (
     <div className='w-screen overflow-x-hidden '>
       <Home/>
       <Aboutme/>
-      <Projects DataProject={getProject}/>
+      <Suspense>
+      <Projects />
+      </Suspense>
       <Service/>
       <Contactus/>
       <Footer/>
     </div>
   )
 }
-
-export default page

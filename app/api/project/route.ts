@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismaDb";
 import { technology } from "@/interface";
-
+import { revalidatePath } from "next/cache";
 
 
 export const GET = async (req:Request,res:NextResponse) => {
@@ -46,7 +46,7 @@ export const POST = async (req: Request, res: NextResponse) => {
             }
         })
       })
-
+      revalidatePath("/");
       return NextResponse.json(createproject)
     }
     return NextResponse.json(body)

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sleep from "@/components/Sleep";
+// import Sleep from "@/components/Sleep";
 import ToasterContext from "./context/ToasterContext";
 import AuthContext from "./context/AuthContext";
 

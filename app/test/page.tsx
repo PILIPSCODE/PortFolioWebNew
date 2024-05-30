@@ -1,10 +1,10 @@
-import MicrophoneComponent from '@/components/speech'
+// import MicrophoneComponent from '@/components/speech'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-        <MicrophoneComponent/>
+        {/* <MicrophoneComponent/> */}
     </div>
   )
 }

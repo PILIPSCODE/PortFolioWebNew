@@ -5,12 +5,6 @@ import Navigation from './Navigation';
 import { ReactTyped } from "react-typed";
 import { motion} from 'framer-motion';
 const Home = () => {
-  
-
-
-
-
-
     return (
         <div className='w-full h-screen font-popOne flex overflow-hidden flex-col items-center justify-center'>
             <motion.div

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 import Image from 'next/image';
 import { calculateAge } from '@/app/utils/calculateAge';
-import Skills from './Skills';
+// import Skills from './Skills';
 import Education from './Education';
 import HistoryEmployment from './HistoryEmployment';
 
@@ -37,7 +37,7 @@ const Aboutme = () => {
                         More than 1 programming language including Javascript, Golang, Python, Dart, Fast Learner and Adaptable, able to work together in a team
                     </h1>
 
-                    <Skills />
+                    {/* <Skills /> */}
 
                     <Education/>
 
