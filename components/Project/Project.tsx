@@ -13,8 +13,8 @@ const Project = async () => {
                     {DataProject?.map((e, index) => (
                         e.img !== null ?
                             <div key={e.id} className="card  bg-base-100 shadow-lg rounded-lg shadow-white focus-within:outline-orange-500 focus-within:shadow-orange-500 outline">
-                                <figure className=' relative h-64'>
-                                    <Image src={e.img} alt='card-img' fill className='object-cover' />
+                                <figure className=' relative '>
+                                    <Image src={e.img} alt='card-img' width={864} height={448} className='object-contain' />
                                     <div className='h-full w-full text-2xl focus-within:opacity-100  absolute flex justify-center items-center bg-black/50 opacity-0 duration-300 hover:opacity-100'>
                                         <div className=' flex gap-4 p-2 bg-white rounded-3xl text-black'>
                                             <Link className={`${e.link !== ""? "" : "text-red-600 pointer-events-none"}`} href={e.link}><FaEye /></Link>

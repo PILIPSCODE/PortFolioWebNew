@@ -32,9 +32,8 @@ const Aboutme = () => {
                     <div className='relative w-28 sm:h-36 sm:w-36 h-28' style={{ float: 'left', marginRight: '20px' }}>
                         <Image fill alt='person' src={"/pilips.png"} className=" p-2 bg-white rounded-full" />
                     </div>
-                    <h1 className='md:text-2xl text-base text-justify '>Hello Everyone My Fullname is Pilipus Kuncoro Wismoady. My age {age} years Old,
-                        Knowledgeable in user interface and debugging processes. Experienced Web Developer adept in all stages of advanced web development. Proficient in
-                        More than 1 programming language including Javascript, Golang, Python, Dart, Fast Learner and Adaptable, able to work together in a team
+                    <h1 className='md:text-2xl text-base text-justify '>
+                        Hello everyone, my full name is Pilipus Kuncoro Wismoady. I am {age} years old, Knowledgeable in user interface and debugging process. Experienced Web Developer proficient in all stages of advanced web development.  Mastering intermediate-high Javascript programming language, beginner in Golang, beginner in Python, beginner in Dart, Fast Learner and Adaptable, able to work together in a team.
                     </h1>
 
                     {/* <Skills /> */}
