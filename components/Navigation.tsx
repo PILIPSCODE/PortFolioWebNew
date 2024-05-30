@@ -16,7 +16,7 @@ type Navigation = {
 }
 const Nav: Navigation[] = [
     {
-        Link: "/",
+        Link: "/Pilipus Kuncoro Wismoady cv.pdf",
         Text: "Hire Me!",
         Icons: BiTask,
         BgColor: "bg-blue-600"
