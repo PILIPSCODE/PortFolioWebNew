@@ -58,7 +58,7 @@ export default function Carausel() {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="card  bg-base-100 shadow-xl ">
+                    <div className="card  bg-black shadow-xl ">
                         <div className="card-body text-sm">
                             <h2 className="card-title justify-between text-base">
                                 <div className='gap-2 flex items-center'>
@@ -70,7 +70,7 @@ export default function Carausel() {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="card  bg-base-100 shadow-xl ">
+                    <div className="card  bg-black shadow-xl ">
                         <div className="card-body text-sm">
                             <h2 className="card-title justify-between text-base">
                                 <div className='gap-2 flex items-center'>
@@ -82,7 +82,6 @@ export default function Carausel() {
                     </div>
                 </SwiperSlide>
                 
-
             </Swiper>
         </>
     );
