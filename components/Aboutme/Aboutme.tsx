@@ -1,6 +1,6 @@
 "use client"
-import React, { useEffect, useState } from 'react'
-
+import React, { useEffect, useRef, useState } from 'react'
+import { motion, useScroll } from "framer-motion";
 import Image from 'next/image';
 import { calculateAge } from '@/app/utils/calculateAge';
 import Skills from './Skills';
@@ -11,7 +11,7 @@ import HistoryEmployment from './HistoryEmployment';
 
 const Aboutme = () => {
     const [age, setAge] = useState(0);
-
+    const TextAbout = `Hello everyone, my full name is Pilipus Kuncoro Wismoady. I am ${age} years old, Knowledgeable in user interface and debugging process. Experienced Web Developer proficient in all stages of advanced web development.  Mastering intermediate-high Javascript programming language, beginner in Golang, beginner in Python, beginner in Dart, Fast Learner and Adaptable, able to work together in a team.`.split('')
 
     useEffect(() => {
 
@@ -22,6 +22,19 @@ const Aboutme = () => {
         setAge(calculateAge(dobDay, dobMonth, dobYear));
     }, []);
 
+    const variants = {
+        initialState: {
+            opacity: 0,
+            clipPath: "circle(2.1% at 50% 50%)",
+
+        },
+        WhileInView: {
+            opacity: 1,
+            clipPath: "circle(50% at 50% 50%)",
+
+        },
+    }
+
     return (
         <div id='Aboutme' className=' w-screen pt-20  font-popOne relative '>
 
@@ -29,18 +42,37 @@ const Aboutme = () => {
             <h1 className=' text-5xl max-md:text-3xl md:p-10 p-2 '>About Me!</h1>
             <div className='lg:w-8/12   mx-auto flex items-center flex-col justify-center  max-lg:w-11/12 p-4 sm:pt-20 text-justify'>
                 <div>
-                    <div className='relative w-28 sm:h-36 sm:w-36 h-28' style={{ float: 'left', marginRight: '20px' }}>
+                    <motion.div
+                        whileInView="WhileInView"
+                        initial="initialState"
+                        variants={variants}
+                        transition={{
+                            delay: 1,
+                            duration: 0.5,
+                        }}
+                        className='relative w-28 sm:h-36 sm:w-36 h-28' style={{ float: 'left', marginRight: '20px' }}>
                         <Image fill alt='person' src={"/pilips.png"} className=" p-2 bg-white rounded-full" />
-                    </div>
-                    <h1 className='md:text-2xl text-base text-justify '>
-                        Hello everyone, my full name is Pilipus Kuncoro Wismoady. I am {age} years old, Knowledgeable in user interface and debugging process. Experienced Web Developer proficient in all stages of advanced web development.  Mastering intermediate-high Javascript programming language, beginner in Golang, beginner in Python, beginner in Dart, Fast Learner and Adaptable, able to work together in a team.
-                    </h1>
+                    </motion.div>
+                    <motion.h1
+                        className='md:text-2xl text-base text-justify '>
+                        {TextAbout.map((char, index) => (
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                whileInView={{
+                                    opacity: 1,
+                                }}
+                                viewport={{once:true}}
+                                transition={{ duration: 1.5, delay: 1 * index / 120 }}
+                                key={index}>{char}
+                            </motion.span>
+                        ))}
+                    </motion.h1>
 
                     <Skills />
 
-                    <Education/>
+                    <Education />
 
-                    <HistoryEmployment/>
+                    <HistoryEmployment />
 
                 </div>
             </div>

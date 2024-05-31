@@ -5,6 +5,21 @@ import Navigation from './Navigation';
 import { ReactTyped } from "react-typed";
 import { motion} from 'framer-motion';
 const Home = () => {
+    const variants = {
+        initialState: {
+            opacity: 0,
+            clipPath: "circle(2.1% at 50% 50%)",
+
+        },
+        animateState: {
+            opacity: 1,
+            clipPath: "circle(50% at 50% 50%)",
+
+        },
+        exitState: {
+            clipPath: "circle(50% at 50% 50%)",
+        }
+    }
     return (
         <div className='w-full h-screen font-popOne flex overflow-hidden flex-col items-center justify-center'>
             <motion.div
@@ -33,21 +48,7 @@ const Home = () => {
                         delay: 1,
                         duration: 1.5,
                     }}
-                    variants={{
-                        initialState: {
-                            opacity: 0,
-                            clipPath: "circle(2.1% at 50% 50%)",
-
-                        },
-                        animateState: {
-                            opacity: 1,
-                            clipPath: "circle(50% at 50% 50%)",
-
-                        },
-                        exitState: {
-                            clipPath: "circle(50% at 50% 50%)",
-                        }
-                    }}
+                    variants={variants}
                     className=' max-[360px]:w-60 w-72 h-72  max-[360px]:h-60 rounded-full  flex justify-center items-center relative'>
                     <motion.div
 
