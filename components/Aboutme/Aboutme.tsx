@@ -1,6 +1,6 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
-import { motion, useScroll } from "framer-motion";
+import React, { useEffect, useState } from 'react'
+import { motion} from "framer-motion";
 import Image from 'next/image';
 import { calculateAge } from '@/app/utils/calculateAge';
 import Skills from './Skills';

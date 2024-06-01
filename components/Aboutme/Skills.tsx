@@ -4,6 +4,7 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { FaGolang, FaPython, FaNodeJs, FaReact, FaBootstrap } from "react-icons/fa6";
 import { SiDart, SiNextdotjs, SiExpress, SiTailwindcss, SiMongodb, SiGithub, SiPostman, SiGit, SiVisualstudiocode, SiRedux } from "react-icons/si";
 import { IconType } from 'react-icons'
+import { motion} from "framer-motion";
 
 
 type Skils = {
@@ -128,12 +129,28 @@ const Skills = () => {
     return (
         <div>
             <div className='justify-center flex'>
-                <h1 className='mx-auto text-3xl  max-md:text-xl bg-white text-black my-14'>Skills</h1>
+                <motion.h1
+                initial={{ scale:0 }}
+                whileInView={{
+                    scale:1 ,
+                }}
+                viewport={{once:true}}
+                transition={{ duration: 0.5}}
+                className='mx-auto text-3xl  max-md:text-xl bg-white text-black my-14'>Skills</motion.h1>
             </div>
             <div className='flex gap-10 justify-center flex-wrap'>
 
                 {skills.map((items, index) => (
-                    <IconsSkill active={items.active} key={index}  Icon={items.Icon} lang={items.lang} />
+                    <motion.span 
+                    initial={{ scale:0 }}
+                    whileInView={{
+                        scale:1 ,
+                    }}
+                    viewport={{once:true}}
+                    transition={{ duration: 0.5, delay:index/2 }}
+                    key={index}>
+                        <IconsSkill active={items.active}   Icon={items.Icon} lang={items.lang} />
+                    </motion.span>
                 ))}
             </div>
         </div>
