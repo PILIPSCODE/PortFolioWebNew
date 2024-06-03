@@ -147,7 +147,7 @@ const Skills = () => {
                         scale:1 ,
                     }}
                     viewport={{once:true}}
-                    transition={{ duration: 0.5, delay:index/2 }}
+                    transition={{ duration: 0.5, delay:index/6 }}
                     key={index}>
                         <IconsSkill active={items.active}   Icon={items.Icon} lang={items.lang} />
                     </motion.span>

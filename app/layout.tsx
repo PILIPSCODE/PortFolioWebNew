@@ -24,13 +24,15 @@ export default function RootLayout({
       <AuthContext>
         
       <body className={inter.className}>
-      <Script id="gtm-script" strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-SGEXKNFEMS"/>
+      <Script id="gtm-script" strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-NW5R351V40"/>
         <Script id="gtm-script2">
           {`
-           window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments);}
-           gtag('js', new Date());
-           gtag('config', 'G-SGEXKNFEMS');
+          <!-- Google tag (gtag.js) -->
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-NW5R351V40');
           `}
         </Script>
 

@@ -11,7 +11,7 @@ import HistoryEmployment from './HistoryEmployment';
 
 const Aboutme = () => {
     const [age, setAge] = useState(0);
-    const TextAbout = `Hello everyone, my full name is Pilipus Kuncoro Wismoady. I am ${age} years old, Knowledgeable in user interface and debugging process. Experienced Web Developer proficient in all stages of advanced web development.  Mastering intermediate-high Javascript programming language, beginner in Golang, beginner in Python, beginner in Dart, Fast Learner and Adaptable, able to work together in a team.`.split('')
+    const TextAbout = `Hello everyone, my full name is Pilipus Kuncoro Wismoady. I am ${age} years old, Knowledgeable in user interface and debugging process. Experienced Web Developer proficient in all stages of advanced web development.  Mastering intermediate-high Javascript programming language, beginner in Golang, beginner in Python, beginner in Dart, Fast Learner and Adaptable, able to work together in a team.`.split(" ")
 
     useEffect(() => {
 
@@ -39,7 +39,7 @@ const Aboutme = () => {
         <div id='Aboutme' className=' w-screen pt-20  font-popOne relative '>
 
 
-            <h1 className=' text-5xl max-md:text-3xl md:p-10 p-2 '>About Me!</h1>
+            <motion.h1 initial={{opacity:0, x:-100}} whileInView={{opacity:1,x:0}} viewport={{once:true}} className=' text-5xl max-md:text-3xl md:p-10 p-2 '>About Me!</motion.h1>
             <div className='lg:w-8/12   mx-auto flex items-center flex-col justify-center  max-lg:w-11/12 p-4 sm:pt-20 text-justify'>
                 <div>
                     <motion.div
@@ -57,13 +57,14 @@ const Aboutme = () => {
                         className='md:text-2xl text-base text-justify '>
                         {TextAbout.map((char, index) => (
                             <motion.span
-                                initial={{ opacity: 0 }}
+                                initial={{ opacity: 0}}
                                 whileInView={{
-                                    opacity: 1,
+                                    opacity: 1
                                 }}
                                 viewport={{once:true}}
-                                transition={{ duration: 1.5, delay: 1 * index / 120 }}
+                                transition={{ duration: 1.5, delay: 1 * index / 60 }}
                                 key={index}>{char}
+                                {" "}
                             </motion.span>
                         ))}
                     </motion.h1>
