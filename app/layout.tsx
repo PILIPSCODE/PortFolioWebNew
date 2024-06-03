@@ -21,8 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en"  className="overflow-x-hidden scroll-smooth">
+      <head>
+      <meta name="google-adsense-account" content={`${process.env.NEXT_PUBLIC_ADSENSE}`}/>
+      </head>
       <AuthContext>
-        
+      
       <body className={inter.className}>
       <Script id="gtm-script" strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-NW5R351V40"/>
         <Script id="gtm-script2">
