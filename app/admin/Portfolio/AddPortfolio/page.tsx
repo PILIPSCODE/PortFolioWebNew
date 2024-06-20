@@ -1,38 +1,31 @@
 "use client"
 
-import axios from "axios";
 import { CldUploadButton } from "next-cloudinary";
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaX } from "react-icons/fa6";
 import { toast } from "react-hot-toast";
+import { AddPortfolio } from "@/app/libs/action";
+import { Services } from "@/interface";
+import Input from "@/components/Input";
 import { useRouter } from "next/navigation";
+import Button from "@/components/Button";
 
 
-type Services = {
-  name: string,
-  description: string,
-  img: string,
-  technology: string[],
-  link: string,
-  github: string,
-}
+
 const Page = () => {
   const [formData, setFromData] = useState<Services>({ name: "", description: "", img: "", technology: [], link: "", github: "" })
   const [technology, setTecnology] = useState("")
-
   const router = useRouter()
   const HandleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(formData)
     try {
       if (formData.description !== "" && formData.img !== "" && formData.name !== "" && formData.technology.length !== 0) {
-        const res = await axios.post('/api/project', formData)
-        if (res.status === 200) {
-          toast.success("Successfully Added")
-        }
+        const res = await AddPortfolio(formData)
+        setFromData({ name: "", description: "", img: "", technology: [], link: "", github: "" })
+        router.push("/admin/Portfolio")
+        if (res !== null) toast.success("succesfully added")
 
-        router.push('/admin/Portfolio')
       }
     } catch (error) {
       toast.error("Internal Server Error")
@@ -71,13 +64,12 @@ const Page = () => {
             <label className="label">
               <span className="label-text text-gray-500">Project Name</span>
             </label>
-            <input
+            <Input
               type="text"
               onChange={(e) => setFromData({ ...formData, name: e.target.value })}
               required
               value={formData.name}
               placeholder="Type here"
-              className="input input-bordered w-full "
             />
           </div>
           <div className="dropdown dropdown-bottom">
@@ -96,10 +88,10 @@ const Page = () => {
 
               </div>
 
-              <input
+              <Input
                 onChange={(e) => setTecnology(e.target.value)}
                 value={technology}
-                className="input  rounded-md flex-grow" placeholder="Add Technology here" />
+                placeholder="Add Technology here" />
             </div>
             {
               technology !== "" ?
@@ -114,24 +106,22 @@ const Page = () => {
             <label className="label">
               <span className="label-text text-gray-500">Github Link</span>
             </label>
-            <input
+            <Input
               type="text"
               onChange={(e) => setFromData({ ...formData, github: e.target.value })}
               value={formData.github}
               placeholder="Type here"
-              className="input input-bordered w-full "
             />
           </div>
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text text-gray-500">Web Link</span>
             </label>
-            <input
+            <Input
               type="text"
               onChange={(e) => setFromData({ ...formData, link: e.target.value })}
               value={formData.link}
               placeholder="Type here"
-              className="input input-bordered w-full "
             />
           </div>
           <label className="label">
@@ -143,11 +133,11 @@ const Page = () => {
             value={formData.description}
             onChange={(e) => setFromData({ ...formData, description: e.target.value })}
             required
-            className="input input-bordered w-full h-40 resize-none "
+            className="bg-black text-white  border p-3 w-full h-40 resize-none "
           ></textarea>
           <div className="flex w-full justify-end">
 
-            <button type="submit" className="border-2  text-black dark:text-white text-xl mt-4 border-blue-600 p-2 rounded-md hover:bg-blue-600 duration-300 flex items-center gap-2">Add</button>
+            <Button type="submit">Add</Button>
           </div>
         </div>
 

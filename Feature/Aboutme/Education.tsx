@@ -43,7 +43,7 @@ const Education = () => {
             <div>
                 <h1 className='px-2 flex gap-2 items-center text-3xl max-md:text-xl bg-white text-black my-14'><FaBook/> Education</h1>
             </div>
-            <motion.ul  variants={variants} initial="initialState" whileInView="WhileInView"  transition={{duration:2}} className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+            <motion.ul  variants={variants} initial="initialState" whileInView="WhileInView" viewport={{once:true}}   transition={{duration:2}} className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                 {dumydata.map((e,index) => (
                 <li key={e.id}>
                     <hr className={`${index !== 0?"" :"hidden"} bg-white`}/>

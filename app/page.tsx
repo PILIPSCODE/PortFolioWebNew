@@ -1,9 +1,9 @@
-import Aboutme from '@/components/Aboutme/Aboutme'
-import Contactus from '@/components/Contactme/ContactMe'
-import Footer from '@/components/Contactme/Footer'
-import Home from '@/components/Home'
-import Projects from '@/components/Project/Project'
-import Service from '@/components/Service/Service'
+import Aboutme from '@/Feature/Aboutme/Aboutme'
+import Contactus from '@/Feature/Contactme/ContactMe'
+import Footer from '@/Feature/Contactme/Footer'
+import Home from '@/Feature/Home'
+import Projects from '@/Feature/Project/Project'
+import Service from '@/Feature/Service/Service'
 import { Suspense } from "react";
 
 export default function Page () {

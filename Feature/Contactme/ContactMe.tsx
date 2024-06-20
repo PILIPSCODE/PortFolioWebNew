@@ -1,9 +1,10 @@
+import Input from '@/components/Input'
 import React from 'react'
 import {  FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa6'
 
 const Contactus = () => {
     return (
-        <div className=' font-popOne  ' id='contactus'>
+        <div className=' font-popOne mt-10 ' id='contactus'>
             <h1 className=' text-5xl max-md:text-3xl md:p-10 p-2 '>Contact!</h1>
             <div className='p-10 overflow-hidden  grid md:grid-cols-2 '>
                 <div
@@ -19,11 +20,11 @@ const Contactus = () => {
                 <div className='md:px-10 max-md:pt-6 text-2xl'>
                     <div>
                         <h1>Name</h1>
-                        <input type="text" placeholder='Type Here' className='w-full text-lg border  text-white px-2 mt-1 h-14 bg-black ' />
+                        <Input type="text" placeholder='Type Here'  />
                     </div>
                     <div className=' my-5'>
                         <h1>Email/Instagram</h1>
-                        <input type="text" placeholder='Type Here' className='w-full  px-2 text-lg border bg-none mt-1 text-white h-14 bg-black ' />
+                        <Input type="text" placeholder='Type Here'  />
                     </div>
                     <div className=' mb-5'>
                         <h1>Masukan</h1>

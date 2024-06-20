@@ -2,6 +2,7 @@
 
 import { FC } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Button from "@/components/Button";
 
 type o = {
   hi: string;
@@ -23,7 +24,7 @@ const PaginationControls: FC<PaginationControlsProps> = ({
   const searchParams = useSearchParams();
 
   const page = searchParams.get("page") ?? "1";
-  const per_page = "9";
+  const per_page = "4";
 
   //  {page} / {Math.ceil( length/ Number(per_page))}
   const pagecurr = Math.ceil(length / Number(per_page));
@@ -37,38 +38,36 @@ const PaginationControls: FC<PaginationControlsProps> = ({
   }
 
   return (
-    <div className="flex gap-2">
-      <button
-        className="join-item btn btn-outline bg-base-300"
+    <div className="flex gap-2 my-7">
+      <Button
         disabled={!hasPrevPage}
         onClick={() => {
           router.push(`${Route}/?page=${Number(page) - 1}`);
         }}
       >
         prev page
-      </button>
+      </Button>
 
       {arr.map((arr) => (
-        <button
+        <Button
           key={arr}
           onClick={() => {
             router.push(`${Route}/?page=${arr}`);
           }}
-          className="join-item btn"
+          className={`${arr === Number(page)?"bg-white text-black":""}`}
         >
           {arr}
-        </button>
+        </Button>
       ))}
 
-      <button
-        className="join-item btn btn-outline bg-base-300"
+      <Button
         disabled={!hasNextPage}
         onClick={() => {
           router.push(`${Route}/?page=${Number(page) + 1}`);
         }}
       >
         next page
-      </button>
+      </Button>
     </div>
   );
 };

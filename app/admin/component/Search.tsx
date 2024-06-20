@@ -1,4 +1,5 @@
 "use client"
+import Button from '@/components/Button'
 import React, { useState } from 'react'
 
 type search ={
@@ -28,7 +29,7 @@ const Search = (props:search) => {
   return (
     <form onSubmit={(e) => {handleSubmit(e)}} className='flex gap-3 justify-center w-full my-5'>
         <input onChange={(e) => setSearch(e.target.value)} className='input-group-lg w-8/12 max-md:w-11/12 px-2 rounded-xl' placeholder='Example: 2023-08-28' type="text" />
-        <button className='btn btn-primary' type="submit">Search</button>
+        <Button variant="info" className='' type="submit">Search</Button>
     </form>
   )
 }
