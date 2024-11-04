@@ -15,14 +15,22 @@ async function main() {
     });
   }
 
-  // const dataservice = fs.readFileSync('Service.json', 'utf-8');
-  // const services = JSON.parse(dataservice);
+  const dataservice = fs.readFileSync('Service.json', 'utf-8');
+  const services = JSON.parse(dataservice);
 
-  // for (const service of services) {
-  //   await prisma.service.create({
-  //     data: service,
-  //   });
-  // }
+  for (const service of services) {
+    await prisma.service.create({
+      data: service,
+    });
+  }
+  const dataUser = fs.readFileSync('User.json', 'utf-8');
+  const User = JSON.parse(dataUser);
+
+  for (const service of User) {
+    await prisma.user.create({
+      data: service,
+    });
+  }
 
   console.log("Seeding completed.");
 }
