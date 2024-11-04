@@ -3,6 +3,8 @@ import { GetProject } from '@/app/libs/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaEye, FaGithub } from 'react-icons/fa6'
+
+
 const Project = async () => {
     const DataProject = await GetProject()
     return (
@@ -10,7 +12,7 @@ const Project = async () => {
             <h1 className=' text-5xl max-md:text-3xl md:p-10 p-2 '>Project!</h1>
             <div className='lg:w-8/12  mx-auto  max-lg:w-11/12    text-justify'>
                 <div className='grid md:grid-cols-2 gap-10 mt-10  w-full lg:pr-4'>
-                    {DataProject?.map((e, index) => (
+                    {DataProject?.map((e:any, index:any) => (
                         e.img !== null ?
                             <div key={e.id} className="card  bg-base-100 shadow-lg rounded-lg shadow-white focus-within:outline-orange-500 focus-within:shadow-orange-500 outline">
                                 <figure className=' relative '>
@@ -29,7 +31,7 @@ const Project = async () => {
                                     </h2>
                                     <p>{e.description}</p>
                                     <div className="card-actions pt-2  justify-center">
-                                        {e.technology.map((e, index) => (
+                                        {e.technology.map((e:any, index:any) => (
                                             <div key={index} className="badge border border-black text-black bg-white">{e.technology}</div>
                                         ))}
                                     </div>

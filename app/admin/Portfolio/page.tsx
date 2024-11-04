@@ -8,6 +8,9 @@ const Page = async({
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
   const data = await GetProject()
+  if (!data) {
+    return null;
+  }
   return (
     <div className='sm:w-40 md:p-10 p-3 sm:h-screen h-auto w-screen  flex-grow overflow-y-scroll'>
       <Portfolio searchParams={searchParams} Portfolio={data}/>

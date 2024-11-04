@@ -4,17 +4,14 @@ import Footer from '@/Feature/Contactme/Footer'
 import Home from '@/Feature/Home'
 import Projects from '@/Feature/Project/Project'
 import Service from '@/Feature/Service/Service'
-import { Suspense } from "react";
+import { GetProject } from './libs/data'
 
-export default function Page () {
-
+export default async function Page () {
   return (
     <div className='w-screen overflow-x-hidden '>
       <Home/>
       <Aboutme/>
-      <Suspense>
-      <Projects />
-      </Suspense>
+      <Projects/>
       <Service/>
       <Contactus/>
       <Footer/>

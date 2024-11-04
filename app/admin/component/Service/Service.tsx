@@ -49,7 +49,7 @@ const DumyData: Service[] = [
 
 export default function Carausel() {
     return (
-        <div className='grid lg:grid-cols-3 md:grid-cols-2 max-lg:gap-4 lg:h-screen w-full items-center'>
+        <div className='grid lg:grid-cols-3 md:grid-cols-2 max-lg:gap-4 lg:h-screen w-full items-center p-5'>
 
 
             {

@@ -3,57 +3,19 @@ import { Service } from '@prisma/client';
 import { FaCheckCircle } from 'react-icons/fa';
 
 
-const DumyData: Service[] = [
-    {
-        id: "1",
-        isi: [
-            "Fast Work",
-            "Not include hosting",
-            "Free Revisi 3x",
-        ],
-        price: "Rp.400k - Rp.600k",
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        title: "Slicing design"
-    },
-    {
-        id: "2",
-        isi: [
-            "Fast Work",
-            "Not include hosting",
-            "Free Revisi 3x",
-            "Responsive Design"
-        ],
-        price: "Rp.400k - Rp.1200k",
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        title: "Landing Page"
-    },
-    {
-        id: "2",
-        isi: [
-            "Fast Work",
-            "Not include hosting",
-            "Free Revisi 3x",
-            "Responsive Design",
-        ],
-        price: "Rp.1000k - Rp.2500k",
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        title: "Ecommerce Website"
-    },
-
-]
+type props = {
+    getService : Service[]
+}
 
 
+export default function Carausel(props:props) {
 
-export default function Carausel() {
     return (
-        <div className='grid lg:grid-cols-3 md:grid-cols-2 max-lg:gap-4 lg:h-screen w-full items-center'>
+        <div className='grid lg:grid-cols-3 md:grid-cols-2 max-lg:gap-4 p-5 lg:h-screen w-full items-center'>
 
 
             {
-                DumyData.map((e, index) => (
+                props.getService.map((e, index) => (
 
                     <div key={e.id} className={`rounded-lg bg-gradient-to-t my-2 ${(index + 1) % 2 === 0 ? "bg-black shadow shadow-white lg:h-4/6" : "bg-white text-black lg:h-3/6"}  relative   h-96`}>
                         <div className="p-7">

@@ -1,5 +1,5 @@
 import getSS from "./GetSession";
-import prisma from "@/app/libs/prismaDb";
+import {prisma} from "@/app/libs/prismaDb";
 
 export default async function GetCurrentUser() {
   try {

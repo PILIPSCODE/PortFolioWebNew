@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { FaCopyright, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa6'
+import { FaCopyright} from 'react-icons/fa6'
 
 const Footer = () => {
     return (

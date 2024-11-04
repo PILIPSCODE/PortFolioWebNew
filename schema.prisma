@@ -1,94 +1,88 @@
-datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
-}
-
 generator client {
   provider = "prisma-client-js"
 }
 
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE")
+}
+
 model Project {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  id          String      @id @default(uuid())
   name        String?
   img         String?
   link        String
   github      String
   description String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  technology Technolgy[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  technology  Technolgy[]
 }
 
 model Technolgy {
-  id         String  @id @default(auto()) @map("_id") @db.ObjectId
+  id         String  @id @default(uuid())
   technology String?
-
-  project   Project @relation(fields: [projectId], references: [id])
-  projectId String  @db.ObjectId
+  projectId  String
+  project    Project @relation(fields: [projectId], references: [id])
 }
 
 model Service {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  title        String?
-  price       String?
-  isi         String[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        String   @id @default(uuid())
+  title     String?
+  price     String?
+  isi       String[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Blog {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  id          String   @id @default(uuid())
   Title       String?
   img         String?
   description String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-
-  Comment Chat[]
+  Comment     Chat[]
 }
 
 model Chat {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  id        String   @id @default(uuid())
   message   String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-
-  project   Blog   @relation(fields: [projectId], references: [id])
-  projectId String @db.ObjectId
-
-  user   User   @relation(fields: [userId], references: [id])
-  userId String @db.ObjectId
+  projectId String
+  userId    String
+  project   Blog     @relation(fields: [projectId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model User {
-  id    String  @id @default(auto()) @map("_id") @db.ObjectId
-  name  String?
-  email String? @unique
-  image String?
-  admin Boolean? @default(false)
-  chat          Chat[]
+  id            String    @id @default(uuid())
+  name          String?
+  email         String?   @unique
+  image         String?
+  admin         Boolean?  @default(false)
   emailVerified DateTime?
   createdAt     DateTime  @default(now())
   updateAt      DateTime  @updatedAt
-
-  accounts Account[]
+  accounts      Account[]
+  chat          Chat[]
 }
 
 model Account {
-  id                String  @id @default(auto()) @map("_id") @db.ObjectId
-  userId            String  @db.ObjectId
+  id                String  @id @default(uuid())
+  userId            String
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.String
-  access_token      String? @db.String
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.String
+  id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }

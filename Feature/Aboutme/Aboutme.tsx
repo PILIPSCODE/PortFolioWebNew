@@ -36,7 +36,7 @@ const Aboutme = () => {
     }
 
     return (
-        <div id='Aboutme' className=' w-screen pt-20   font-popOne relative '>
+        <div id='Aboutme' className=' w-screen pt-20  font-popOne relative '>
 
 
             <motion.h1 initial={{opacity:0, x:-100}} whileInView={{opacity:1,x:0}} viewport={{once:true}} className=' text-5xl max-md:text-3xl md:p-10 p-2 '>About Me!</motion.h1>
@@ -51,7 +51,7 @@ const Aboutme = () => {
                             duration: 0.5,
                         }}
                         viewport={{once:true}}
-                        className='relative w-28 sm:h-36 sm:w-36 h-28' style={{ float: 'left', marginRight: '20px' }}>
+                        className='relative w-28  sm:h-36 sm:w-36 h-28' style={{ float: 'left', marginRight: '20px' }}>
                         <Image fill alt='person' src={"/pilips.png"} className=" p-2 bg-white rounded-full" />
                     </motion.div>
                     <motion.h1

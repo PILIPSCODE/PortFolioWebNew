@@ -24,3 +24,14 @@ export interface Services  {
     description: string | null;
     createdAt: Date;
 }[]
+
+
+export interface EditTechnologyPortfolio {
+    technology: EditTechnology[],
+    id:string
+}
+
+export interface EditTechnology {
+    technology:string,
+    id:string
+  }

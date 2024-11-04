@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import prisma from "@/app/libs/prismaDb"
+import {prisma} from "@/app/libs/prismaDb"
 
 export const PUT = async(req:Request,{params}:{params:{id:string}}) => {
     try {

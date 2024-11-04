@@ -1,7 +1,7 @@
-import prisma from "@/app/libs/prismaDb";
+import {prisma} from "@/app/libs/prismaDb";
+import { Project } from "@prisma/client";
 
-export const GetProject = async() => {
-  try {
+export async function GetProject ():Promise<Project[]> {
     const Project = await prisma.project.findMany({
       include:{
         technology:true
@@ -9,9 +9,6 @@ export const GetProject = async() => {
     });
 
     return Project;
-  } catch (error) {
-    throw new Error("Failed to fetch contact data");
-  }
 }
 
 export const  GetService = async() => {
@@ -20,7 +17,7 @@ export const  GetService = async() => {
   
       return Service;
     } catch (error) {
-        throw new Error("Failed to fetch contact data");
+        throw new Error("Failed to fetch service data");
     }
   }
   
@@ -34,7 +31,7 @@ export const  GetService = async() => {
   
       return variants;
     } catch (error) {
-        throw new Error("Failed to fetch contact data");
+        throw new Error("Failed to fetch blog data");
     }
   }
   
