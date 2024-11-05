@@ -4,7 +4,7 @@ import {  FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa6'
 
 const Contactus = () => {
     return (
-        <div className=' font-popOne mt-10 ' id='contactus'>
+        <div className=' font-popOne mt-10 ' id='Contact'>
             <h1 className=' text-5xl max-md:text-3xl md:p-10 p-2 '>Contact!</h1>
             <div className='p-10 overflow-hidden  grid md:grid-cols-2 '>
                 <div

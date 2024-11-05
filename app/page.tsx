@@ -4,7 +4,7 @@ import Footer from '@/Feature/Contactme/Footer'
 import Home from '@/Feature/Home'
 import Projects from '@/Feature/Project/Project'
 import Service from '@/Feature/Service/Service'
-import { GetProject } from './libs/data'
+import Blogpage from '@/Feature/Blog/Blog'
 
 export default async function Page () {
   return (
@@ -13,6 +13,7 @@ export default async function Page () {
       <Aboutme/>
       <Projects/>
       <Service/>
+      <Blogpage/>
       <Contactus/>
       <Footer/>
     </div>

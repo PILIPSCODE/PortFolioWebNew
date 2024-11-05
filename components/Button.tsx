@@ -5,7 +5,7 @@ import cn from "@/utils/cn"
 import { useFormStatus } from "react-dom";
 import clsx from "clsx";
 import { BsTrash } from "react-icons/bs";
-import { DeletePortfolio } from "@/app/libs/action";
+import { DeleteBlog, DeletePortfolio } from "@/app/libs/action";
 
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariant> {
@@ -50,6 +50,19 @@ export const DeleteButton = ({ id }: { id: string }) => {
 
   return (
     <form action={DeletePortfolioWithId}>
+      <Button
+        className="text-red-600 "
+      >
+        <BsTrash size={25} />
+      </Button>
+    </form>
+  );
+};
+export const DeleteButtoni = ({ id }: { id: string }) => {
+  const DeleteBlogwithid = DeleteBlog.bind(null, id);
+
+  return (
+    <form action={DeleteBlogwithid}>
       <Button
         className="text-red-600 "
       >

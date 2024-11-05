@@ -23,9 +23,9 @@ export const  GetService = async() => {
   
   export const GetBlog = async() => {
     try {
-      const variants = await prisma.project.findMany({
+      const variants = await prisma.blog.findMany({
         include:{
-          technology:true
+          Comment:true
         }
       });
   

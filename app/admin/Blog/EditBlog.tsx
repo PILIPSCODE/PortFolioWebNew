@@ -1,81 +1,56 @@
 "use client"
-import axios from "axios";
 import React, { useState } from "react";
 import { useRef } from "react";
-import toast from "react-hot-toast";
 import { BsPencil } from "react-icons/bs";
 import "suneditor/dist/css/suneditor.min.css";
-import { useRouter } from "next/navigation";
 import SunEditorCore from "suneditor/src/lib/core";
-import SunEditor, { buttonList } from "suneditor-react";
+import SunEditor from "suneditor-react";
+import { SubmitButton } from "@/components/Button";
+import { useFormState } from "react-dom";
+import { EditBlog } from "@/app/libs/action";
 
-type Services = {
-    id:string
-    Title: string,
-    createdAt:Date,
-    Descripton: string,
-    Image:string
-  }
-const EditBlog = (props:{service:Services}) => {
+type props = {
+  service: any
+}
+const EditBlogs = (props:props) => {
     const editor = useRef<SunEditorCore>();
     const getSunEditorInstance = (sunEditor: SunEditorCore) => {
       editor.current = sunEditor;
     };
-  const [Descripton, SetDescripton] = useState(props.service.Descripton);
-  const [loading, Setloading] = useState(false);
-  
-
 
   const modalref = useRef<HTMLDialogElement>(null);
-  const router = useRouter()
-  const HandleSubmit = async(e:React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const data= {
-        Descripton,
-      }
-      if(data.Descripton !== ""){
-       
-          
-         
-            try {
-              Setloading(true)
-              const res = await axios.post(`/api/Blog/${props.service.id}`,data)
-              if(res.status === 200){
-                Setloading(false)
-                toast.success("Successfully Edited")
-                router.refresh()
-                modalref.current?.close()
-              }
-            } catch (error) {
-              console.log(error)
-              Setloading(false)
-              toast.error("Internal Server Error")
-            }
-          
-           
-           
-     
-          
-      }
-  }
+  const UpdateProjecttWithId = EditBlog.bind(null, props.service.id);
+  const [state, formAction] = useFormState(UpdateProjecttWithId, null);
+
   return (
     <div>
       <h1 className="text-info" onClick={() => modalref.current?.showModal()}>
         <BsPencil size={20} />
       </h1>
       <dialog ref={modalref} className="modal">
-        <form onSubmit={(e) => HandleSubmit(e)} method="dialog" className="modal-box  h-screen w-11/12 max-w-5xl">
+        <form  action={formAction} method="dialog" className="modal-box  h-screen w-11/12 max-w-5xl">
         <div className="flex justify-center">
             <h1 className='text-4xl text-white border-4 rounded-xl border-white my-5 p-2 '>Edit-Blog</h1>
         </div>
+
         <div onClick={() => modalref.current?.close()} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</div>
           <div>
+          <input
+              type="text"
+              name="Title"
+              defaultValue={props.service.Title}
+              id="Title"
+              required
+              maxLength={65}
+              placeholder="Max-length:65 characters"
+              className="input input-bordered my-2 bg-white text-black w-full "
+            />
             <div>
           <SunEditor
             height="500"
             setAllPlugins={true}
-            onChange={(e) => SetDescripton(e)}
-            setContents={Descripton}
+            name="description"
+            defaultValue={props.service.description}
             setOptions={{
               buttonList:  [
                 ["undo", "redo", "font", "fontSize", "formatBlock"],
@@ -89,12 +64,7 @@ const EditBlog = (props:{service:Services}) => {
           />
           </div>
             <div className="flex justify-end">
-              <button
-                type="submit"
-                className="border-2 text-xl mt-4  text-white border-blue-600 p-2 rounded-md hover:bg-blue-600 duration-300 flex items-center gap-2"
-              >
-                Edit
-              </button>
+              <SubmitButton label="update"/>
             </div>
           </div>
         </form>
@@ -103,4 +73,4 @@ const EditBlog = (props:{service:Services}) => {
   );
 };
 
-export default EditBlog;
+export default EditBlogs;

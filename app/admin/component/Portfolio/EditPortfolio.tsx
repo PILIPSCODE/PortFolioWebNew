@@ -6,8 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import InputVariant from "@/components/InputVariant";
 import { useFormState } from 'react-dom';
-import Button, { SubmitButton } from '@/components/Button';
-import { BsX } from 'react-icons/bs';
+import { SubmitButton } from '@/components/Button';
 import { EditTechnology } from '@/interface';
 type props = {
   isEdit: string,

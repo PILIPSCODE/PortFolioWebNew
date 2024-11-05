@@ -17,8 +17,8 @@ const portfolioSchema = z.object({
 const blogSchema = z.object({
   Title: z.string().min(1),
   description: z.string().min(1),
-  img: z.string().min(1),
 });
+
 
 // Update AddPortfolio function to use zod validation
 export const AddPortfolio = async (
@@ -141,27 +141,101 @@ export const UpdatePortfolio = async (
   redirect("/admin/Portfolio")
 };
 
+
 // Update AddBlog function to use zod validation
-export const AddBlog = async (body: Blog) => {
+export const AddBlog = async (
+  img:string,
+  prevSate: any,
+  formData: FormData
+) => {
+
+  const validatedFields = blogSchema.safeParse(
+    Object.fromEntries(formData.entries())
+  );
+
+  if (!validatedFields.success) {
+    console.log(validatedFields.error.flatten().fieldErrors)
+    return {
+      Error: validatedFields.error.flatten().fieldErrors,
+    };
+  }
+
   try {
-    const result = blogSchema.safeParse(body); // Validate input
-
-    if (!result.success) {
-      console.log(result.error.flatten().fieldErrors); // Log validation errors
-      return;
-    }
-
-    const { Title, description, img } = result.data;
-
-    const createproject = await prisma.blog.create({
+    await prisma.blog.create({
       data: {
-        Title,
-        img,
-        description,
+        Title:validatedFields.data.Title,
+        img:img,
+        description:validatedFields.data.description,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  revalidatePath("/");
+  revalidatePath("/admin/Blog");
+  redirect("/admin/Blog");
+};
+
+
+export const EditBlog = async (
+  id:string,
+  prevSate: any,
+  formData: FormData
+) => {
+
+  const validatedFields = blogSchema.safeParse(
+    Object.fromEntries(formData.entries())
+  );
+
+  if (!validatedFields.success) {
+    console.log(validatedFields.error.flatten().fieldErrors)
+    return {
+      Error: validatedFields.error.flatten().fieldErrors,
+    };
+  }
+
+  try {
+    await prisma.blog.update({
+      where:{
+        id:id,
+      },
+      data: {
+        Title:validatedFields.data.Title,
+        description:validatedFields.data.description,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  revalidatePath("/");
+  revalidatePath("/admin/Blog");
+  redirect("/admin/Blog");
+};
+
+
+
+export const DeleteBlog = async (
+  id:string,
+  prevSate: any,
+) => {
+
+
+  try {
+
+    await prisma.chat.deleteMany({
+      where:{
+        id:id,
       },
     });
 
-    return createproject;
+    await prisma.blog.delete({
+      where:{
+        id:id,
+      },
+      include:{
+        Comment:true
+      }
+    });
   } catch (error) {
     console.log(error);
   }
