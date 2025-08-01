@@ -11,6 +11,7 @@ import { EditTechnology } from '@/interface';
 type props = {
   isEdit: string,
   e: any,
+  page: string | string[];
   setEdit: React.Dispatch<React.SetStateAction<string>>
 }
 
@@ -19,8 +20,8 @@ export default function EditPortfolio(props: props) {
   const [technology, SetTechnology] = useState<EditTechnology[]>(props.e.technology);
 
   const technologywithId = {
-    technology:technology,
-    id:props.e.id
+    technology: technology,
+    id: props.e.id
   }
 
   const UpdateProjecttWithId = UpdatePortfolio.bind(null, technologywithId);
@@ -47,7 +48,7 @@ export default function EditPortfolio(props: props) {
           defaultValue={props.e.description}
           className={`textarea w-full ${idPortfolio !== props.e.id ? "bg-transparent" : " textarea-primary bg-transparent"} mt-3   resize-none`}
         />
-        <InputVariant Data={technology} SetData={SetTechnology}  isEdit={idPortfolio !== props.e.id ?false:true} variant={props.e.technology}/>
+        <InputVariant Data={technology} SetData={SetTechnology} isEdit={idPortfolio !== props.e.id ? false : true} variant={props.e.technology} />
         {idPortfolio === props.e.id ?
           <div>
             <Input className="input-info" name='github' id="github" defaultValue={props.e.github} placeholder="Link Github Here" />
@@ -60,7 +61,7 @@ export default function EditPortfolio(props: props) {
           <SubmitButton label='update' />
           <div
             className="text-white px-2 flex items-center bg-red-600"
-            onClick={() => router.push(`/admin/Portfolio/`)}
+            onClick={() => router.push(`/admin/Portfolio/?page=${props.page}`)}
           >
             Cancel
           </div>

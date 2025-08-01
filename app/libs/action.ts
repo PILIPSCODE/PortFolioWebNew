@@ -7,15 +7,16 @@ import { redirect } from "next/navigation";
 import { z } from "zod"; // Import zod for validation
 
 // Define schema for portfolio validation
-const portfolioSchema = z.object({
-  name: z.string().min(1),
-  description: z.string().min(1),
-  github: z.string().optional(),
-  link: z.string().optional(),
-});
+
 // Define schema for blog validation
 const blogSchema = z.object({
   Title: z.string().min(1),
+  description: z.string().min(1),
+});
+const portfolioSchema = z.object({
+  name: z.string().min(1),
+  link: z.string().min(1),
+  github: z.string().min(1),
   description: z.string().min(1),
 });
 

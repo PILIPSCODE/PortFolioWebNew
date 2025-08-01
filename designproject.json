@@ -1,0 +1,32 @@
+[
+    {
+        "nama" :"Logo",
+        "description" :"Wajah santai seperti bulan menjunjukan bahwa kopi Chilin itu menyantaikan, Dengan desain seperti Yin dan Yang menunjukan desain tersebut seperi sebiji kopi, warna hitam dan putih menunjukan ketegasan, keseimbangan.",
+        "img" :["/mulmed/logoBrand.png","/mulmed/logoUsaha"]
+    },
+    {
+        "nama" :"Typography",
+        "description" :"a simple typography elegent with colors black",
+        "img" :["/mulmed/typography.png"]
+    },
+    {
+        "nama" :"Packaging",
+        "description" :"a simple packaging with colors black and white",
+        "img" :["/mulmed/packagingHitam.png","/mulmed/packagingPutih.png"]
+    },
+    {
+        "nama" :"Sachet",
+        "description" :"The poster maintains a minimalist and modern aesthetic with the black and white color scheme. It effectively conveys a sense of sophistication and elegance, which aligns well with the brand name Chillin. The use of negative space enhances the impact of the key elements.",
+        "img" :["/mulmed/sachetHitam.png","/mulmed/sachetPutih.png"]
+    },
+    {
+        "nama" :"Poster",
+        "description" :"The Chillin coffee poster is exceptionally well-designed to capture attention and provide relevant information to potential customers. With its simple yet elegant design and clear messaging, this poster successfully conveys the brand's values and invites consumers to try their product.",
+        "img" :["/mulmed/poster.png"]
+    },
+    {
+        "nama" :"Announcement",
+        "description" :"",
+        "img" :["/mulmed/announce1.png","/mulmed/announce2.png","/mulmed/announce3.png"]
+    }
+]
