@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { BsCheck2Circle, BsPencil, BsTrash, BsX } from "react-icons/bs";
+import { BsPencil } from "react-icons/bs";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { FaPlusCircle } from "react-icons/fa";
 import PaginationControls from "../PaginationControls";
 import Search from "../Search";
-import { useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import { ServicesWithRelation } from "@/interface";
 import { DeletePortfolio, UpdatePortfolio } from "@/app/libs/action";
 import Button, { DeleteButton } from "@/components/Button";
@@ -73,10 +73,10 @@ const Portfolio = ({
               >
 
                 <div className="absolute flex right-5 z-30 backdrop-blur-md m-2 gap-1  rounded-lg">
-                  <DeleteButton id={e.id}/>
+                  <DeleteButton id={e.id} />
                   <Button
                     className="text-blue-600 "
-                    onClick={() => router.push(`/admin/Portfolio/?id=${e.id}`) }
+                    onClick={() => router.push(`/admin/Portfolio/?page=${page}&id=${e.id}`)}
                   >
                     <BsPencil size={25} />
                   </Button>
@@ -89,7 +89,7 @@ const Portfolio = ({
                     fill
                   />
                 </div>
-                <EditPortfolio setEdit={SetIsEdit} isEdit={isEdit !== "" ? isEdit : ""} e={e} />
+                <EditPortfolio setEdit={SetIsEdit} page={page} isEdit={isEdit !== "" ? isEdit : ""} e={e} />
               </div>
             ))}
           </div>
